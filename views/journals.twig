@@ -6,7 +6,7 @@
 {% block content %}
   <h1 class="page-header">Journals</h1>
    <ol class="breadcrumb">
-    <li><a href="index.php">Home</a></li>
+    <li><a href="{{ app.url_generator.generate('dashboard') }}">Home</a></li>
     <li class="active">Journals</li>
   </ol>
 {% endblock %}
