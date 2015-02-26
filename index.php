@@ -25,21 +25,37 @@ $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
  * Here are the routes
  */
 
-// Home page
+// Home
 $app->get('/', function () use ($app) {
+    return $app['twig']->render('roles.twig', array(
+        'role' => 'any'
+    ));
+})
+->bind('roles');
+
+// Admin home page
+$app->get('/admin', function () use ($app) {
     return $app['twig']->render('admin/dashboard.twig', array(
         'role' => 'admin'
     ));
 })
 ->bind('admin_dashboard');
 
-// Journals list
-$app->get('/journals', function () use ($app) {
+// Admin journals list
+$app->get('/admin/journals', function () use ($app) {
     return $app['twig']->render('admin/journals.twig', array(
         'role' => 'admin'
     ));
 })
 ->bind('admin_journals');
+
+// Admin journals list
+$app->get('/author', function () use ($app) {
+    return $app['twig']->render('author/dashboard.twig', array(
+        'role' => 'author'
+    ));
+})
+->bind('author_dashboard');
 
 
 /**
