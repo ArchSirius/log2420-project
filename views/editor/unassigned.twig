@@ -1,0 +1,12 @@
+{% extends "base.twig" %}
+{% set active_page = "editor_unassigned" %}
+
+{% block title %}Unassigned submissions{% endblock %}
+
+{% block content %}
+  <h1 class="page-header">Unassigned submissions</h1>
+   <ol class="breadcrumb">
+    <li><a href="{{ app.url_generator.generate('editor_unassigned') }}">Home</a></li>
+    <li class="active">Unassigned</li>
+  </ol>
+{% endblock %}
