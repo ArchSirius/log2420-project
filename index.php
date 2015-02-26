@@ -27,15 +27,19 @@ $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
 // Home page
 $app->get('/', function () use ($app) {
-    return $app['twig']->render('admin/dashboard.twig');
+    return $app['twig']->render('admin/dashboard.twig', array(
+        'role' => 'admin'
+    ));
 })
-->bind('dashboard');
+->bind('admin_dashboard');
 
 // Journals list
 $app->get('/journals', function () use ($app) {
-    return $app['twig']->render('admin/journals.twig');
+    return $app['twig']->render('admin/journals.twig', array(
+        'role' => 'admin'
+    ));
 })
-->bind('journals');
+->bind('admin_journals');
 
 
 /**
