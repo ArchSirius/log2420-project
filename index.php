@@ -27,13 +27,13 @@ $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
 // Home page
 $app->get('/', function () use ($app) {
-    return $app['twig']->render('dashboard.twig');
+    return $app['twig']->render('admin/dashboard.twig');
 })
 ->bind('dashboard');
 
 // Journals list
 $app->get('/journals', function () use ($app) {
-    return $app['twig']->render('journals.twig');
+    return $app['twig']->render('admin/journals.twig');
 })
 ->bind('journals');
 
