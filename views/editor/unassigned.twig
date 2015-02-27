@@ -6,7 +6,7 @@
 {% block content %}
   <h1 class="page-header">Unassigned submissions</h1>
    <ol class="breadcrumb">
-    <li><a href="{{ app.url_generator.generate('editor_unassigned') }}">Home</a></li>
+    <li><a href="{{ app.url_generator.generate('editor_dashboard') }}">Home</a></li>
     <li class="active">Unassigned</li>
   </ol>
 
@@ -22,7 +22,7 @@
     		<th> Title </th>
     		<th> Section </th>
     		<th> Submission date </th>
-    		<th> Action </th>
+    		<th> Assign reviewer </th>
     	</tr>
     </thead>
 
@@ -31,7 +31,8 @@
     	<td> <a href="http://vignette4.wikia.nocookie.net/theamazingworldofgumball/images/f/f9/Famous-characters-Troll-face-Troll-face-poker-45046.png/revision/latest?cb=20130701113425">The Physics of Stein;Gate</a> </td>
     	<td> SCI </td>
     	<td> 02-25 </td>
-    	<td> <a class="btn btn-primary" href="https://www.facebook.com/samuelrz" role="button">Assign reviewer</a> </td>
+    	<td> <a class="btn btn-primary" href="https://www.facebook.com/samuelrz" role="button">
+    		<span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a> </td>
     </tr>
 
     <tr>
@@ -39,7 +40,8 @@
     	<td> Cookbook </td>
     	<td> ART </td>
     	<td> 02-25 </td>
-    	<td> <a class="btn btn-primary" href="https://www.facebook.com/samuelrz" role="button">Assign reviewer</a> </td>
+    	<td> <a class="btn btn-primary" href="https://www.facebook.com/samuelrz" role="button">
+    		<span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a> </td>
     </tr>
 
     <tr>
@@ -47,7 +49,17 @@
     	<td> Cookbook </td>
     	<td> ART </td>
     	<td> 02-25 </td>
-    	<td> <a class="btn btn-primary" href="https://www.facebook.com/samuelrz" role="button">Assign reviewer</a> </td>
+    	<td> <a class="btn btn-primary" href="https://www.facebook.com/samuelrz" role="button">
+    		<span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a> </td>
+    </tr>
+
+    <tr>
+    	<td> Interfacenn </td>
+    	<td> Cookbook </td>
+    	<td> ART </td>
+    	<td> 02-25 </td>
+    	<td> <a class="btn btn-primary" href="https://www.facebook.com/samuelrz" role="button">
+    		<span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a> </td>
     </tr>
 
   </table>
