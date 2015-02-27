@@ -66,9 +66,10 @@ $app->get('/author/submissions', function () use ($app) {
 ->bind('author_submissions');
 
 // Author submissions detail
-$app->get('/author/submissions/{id}', function () use ($app) {
+$app->get('/author/submissions/{id}', function ($id) use ($app) {
     return $app['twig']->render('submissionDetail.twig', array(
-        'role' => 'author'
+        'role' => 'author',
+        'id' => $app->escape($id)
     ));
 })
 ->bind('author_submission_detail');

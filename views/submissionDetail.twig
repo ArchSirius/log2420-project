@@ -1,9 +1,32 @@
 {% extends "base.twig" %}
-{% set active_page = "submissions" %}
+{% set active_page = "author_submissions" %}
 
 {% block title %}Submission{% endblock %}
 
 {% block content %}
-  <h1 class="page-header">Submission</h1>
+  <h1 class="page-header">Submission #{{ id }}</h1>
+  <ol class="breadcrumb">
+    <li><a href="{{ app.url_generator.generate('author_dashboard') }}">Home</a></li>
+    <li><a href="{{ app.url_generator.generate('author_dashboard') }}">My submissions</a></li>
+    <li class="active">Submission #{{ id }}</li>
+  </ol>
+
+  <div role="tabpanel">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#summary" aria-controls="home" role="tab" data-toggle="tab">Summary</a></li>
+    <li role="presentation"><a href="#review" aria-controls="profile" role="tab" data-toggle="tab">Review</a></li>
+    <li role="presentation"><a href="#editing" aria-controls="messages" role="tab" data-toggle="tab">Editing</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home"></div>
+    <div role="tabpanel" class="tab-pane" id="profile"></div>
+    <div role="tabpanel" class="tab-pane" id="messages"></div>
+  </div>
+
+</div>
 
 {% endblock %}
