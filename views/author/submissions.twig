@@ -1,0 +1,98 @@
+{% extends "base.twig" %}
+{% set active_page = "author_submissions" %}
+
+{% block title %}My submissions{% endblock %}
+
+{% block content %}
+  <h1 class="page-header">My submissions</h1>
+
+  <div class="panel panel-default">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Section</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="#"> Latex programming language tutorial</a></td>
+          <td>Programming</td>
+          <td>2015-01-04<br /><a href="#"> In review</a></td>
+        </tr>
+        <tr>
+          <td><a href="#"> You spin my head right round</a></td>
+          <td>Music</td>
+          <td>2015-02-02<br /><a href="#"> In review</a></td>
+        </tr>
+        <tr>
+          <td><a href="#"> The purpose of human rights</a></td>
+          <td>Philosophy</td>
+          <td>2015-01-15<br /><a href="#"> In review</a></td>
+        </tr>
+        <tr>
+          <td><a href="#"> Effect of popcorn on human behavior</a></td>
+          <td>Psychology</td>
+          <td>2014-12-15<br /><a href="#"> Published</a></td>
+        </tr>
+        <tr>
+          <td><a href="#"> Using PHP with symfony2 and AngularJS</a></td>
+          <td>Programming</td>
+          <td>2014-12-03<br /><a href="#"> Published</a></td>
+        </tr>
+        <tr>
+          <td><a href="#"> Long term customer relationship</a></td>
+          <td>Business</td>
+          <td>2014-11-13<br /><a href="#"> Published</a></td>
+        </tr>
+        <tr>
+          <td><a href="#"> Do you even lift bro?</a></td>
+          <td>Serious</td>
+          <td>2014-11-10<br /><a href="#"> Refused</a></td>
+        </tr>
+        <tr>
+          <td><a href="#"> Caffeinated computer for developpers</a></td>
+          <td>Programming</td>
+          <td>2014-10-17<br /><a href="#"> Published</a></td>
+        </tr>
+        <tr>
+          <td><a href="#"> Business model for C++ monkeys</a></td>
+          <td>Business</td>
+          <td>2014-09-30<br /><a href="#"> Published</a></td>
+        </tr>
+        <tr>
+          <td><a href="#"> Keyston XL environnemental studies</a></td>
+          <td>Environnement</td>
+          <td>2014-09-01<br /><a href="#"> Published</a></td>
+        </tr>
+      </tbody>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Section</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <nav>
+    <ul class="pagination">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="active"><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+{% endblock %}

@@ -49,13 +49,21 @@ $app->get('/admin/journals', function () use ($app) {
 })
 ->bind('admin_journals');
 
-// Admin journals list
+// Author dashboard
 $app->get('/author', function () use ($app) {
     return $app['twig']->render('author/dashboard.twig', array(
         'role' => 'author'
     ));
 })
 ->bind('author_dashboard');
+
+// Author submissions
+$app->get('/author/submissions', function () use ($app) {
+    return $app['twig']->render('author/submissions.twig', array(
+        'role' => 'author'
+    ));
+})
+->bind('author_submissions');
 
 
 /**

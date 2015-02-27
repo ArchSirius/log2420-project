@@ -125,6 +125,11 @@
                   <a href="{{ app.url_generator.generate('author_dashboard') }}"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;Overview</a>
                 </li>
             </ul>
+            <ul class="nav nav-sidebar">
+              <li{% if 'author_submissions' == active_page %} class="active"{% endif %}>
+                <a href="{{ app.url_generator.generate('author_submissions') }}">My submissions</a>
+              </li>
+            </ul>
           {% endif %}
 
           {% if role == 'reviwer'%}
