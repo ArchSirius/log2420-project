@@ -65,6 +65,9 @@ $app->get('/author/submissions', function () use ($app) {
 })
 ->bind('author_submissions');
 
+
+->bind('author_submissions');
+
 // Author submissions detail
 $app->get('/author/submissions/{id}', function ($id) use ($app) {
     return $app['twig']->render('submissionDetail.twig', array(
@@ -73,6 +76,16 @@ $app->get('/author/submissions/{id}', function ($id) use ($app) {
     ));
 })
 ->bind('author_submission_detail');
+
+
+
+// Author add new submissions
+$app->get('/author/submissions/new', function () use ($app) {
+    return $app['twig']->render('author/newSubmission.twig', array(
+        'role' => 'author'
+    ));
+})
+->bind('author_new_submission');
 
 // Editor home page
 $app->get('/editor', function () use ($app) {
