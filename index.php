@@ -65,9 +65,6 @@ $app->get('/author/submissions', function () use ($app) {
 })
 ->bind('author_submissions');
 
-
-->bind('author_submissions');
-
 // Author submissions detail
 $app->get('/author/submissions/{id}', function ($id) use ($app) {
     return $app['twig']->render('submissionDetail.twig', array(
