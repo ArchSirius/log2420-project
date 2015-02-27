@@ -8,7 +8,7 @@
 
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading">Unassigned submissions</div>
+  <div class="panel-heading"><a href="{{ app.url_generator.generate('editor_unassigned') }}">Unassigned submissions</a></div>
 
   <!-- Table -->
   <table class="table">
@@ -28,7 +28,7 @@
     	<td> <a href="http://vignette4.wikia.nocookie.net/theamazingworldofgumball/images/f/f9/Famous-characters-Troll-face-Troll-face-poker-45046.png/revision/latest?cb=20130701113425">The Physics of Stein;Gate</a> </td>
     	<td> SCI </td>
     	<td> 02-25 </td>
-    	<td> <a class="btn btn-primary" href="https://www.facebook.com/samuelrz" role="button">
+    	<td> <a class="btn btn-primary" href="{{ app.url_generator.generate('editor_assign') }}" role="button">
     		<span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a> </td>
     </tr>
 
@@ -37,7 +37,7 @@
     	<td> Cookbook </td>
     	<td> ART </td>
     	<td> 02-25 </td>
-    	<td> <a class="btn btn-primary" href="https://www.facebook.com/samuelrz" role="button">
+    	<td> <a class="btn btn-primary" href="{{ app.url_generator.generate('editor_assign') }}" role="button">
     		<span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a> </td>
     </tr>
 
@@ -46,7 +46,7 @@
     	<td> Cookbook </td>
     	<td> ART </td>
     	<td> 02-25 </td>
-    	<td> <a class="btn btn-primary" href="https://www.facebook.com/samuelrz" role="button">
+    	<td> <a class="btn btn-primary" href="{{ app.url_generator.generate('editor_assign') }}" role="button">
     		<span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a> </td>
     </tr>
 
@@ -56,7 +56,7 @@
 
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading">Submissions in review</div>
+  <div class="panel-heading"><a href="{{ app.url_generator.generate('editor_inreview') }}">Submissions in review</a></div>
 
   <!-- Table -->
   <table class="table">
