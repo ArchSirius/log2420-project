@@ -65,6 +65,30 @@ $app->get('/author/submissions', function () use ($app) {
 })
 ->bind('author_submissions');
 
+// Editor home page
+$app->get('/editor', function () use ($app) {
+    return $app['twig']->render('editor/dashboard.twig', array(
+        'role' => 'editor'
+    ));
+})
+->bind('editor_dashboard');
+
+// Editor unassigned submissions
+$app->get('/editor/unassigned', function () use ($app) {
+    return $app['twig']->render('editor/unassigned.twig', array(
+        'role' => 'editor'
+    ));
+})
+->bind('editor_unassigned');
+
+// Editor submissions in review
+$app->get('/editor/inreview', function () use ($app) {
+    return $app['twig']->render('editor/inreview.twig', array(
+        'role' => 'editor'
+    ));
+})
+->bind('editor_inreview');
+
 
 /**
  * Run the application
