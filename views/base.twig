@@ -125,6 +125,9 @@
                 <li{% if 'editor_inreview' == active_page %} class="active"{% endif %}>
                   <a href="{{ app.url_generator.generate('editor_inreview') }}">Submissions in review</a>
                 </li>
+                <li{% if 'editor_inediting' == active_page %} class="active"{% endif %}>
+                  <a href="{{ app.url_generator.generate('editor_inediting') }}">Submissions in editing</a>
+                </li>
             </ul>
           {% endif %}
 
