@@ -19,7 +19,7 @@
     <div class="panel-heading" role="tab" id="headingOne">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          View metadatas
+          View metadatas <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
         </a>
       </h4>
     </div>
@@ -98,6 +98,60 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+
+  <!-- Table -->
+  <table class="table">
+
+    <thead>
+      <tr>
+        <th> Reviewer name </th>
+        <th> Interests </th>
+        <th> Reviews done </th>
+        <th> Average time </th>
+        <th> Latest </th>
+        <th> Active reviews </th>
+        <th> Assign </th>
+      </tr>
+    </thead>
+
+    <tr>
+      <td> <a href="https://www.facebook.com/samuelrz">sirius</a> </td>
+      <td> Astrophysics, Particles ph. </td>
+      <td> 42 </td>
+      <td> 3 d </td>
+      <td> 03-01 </td>
+      <td> 2 </td>
+      <td> <a class="btn btn-primary" href="{{ app.url_generator.generate('editor_inreview') }}" role="button">
+        <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a> </td>
+    </tr>
+
+    <tr>
+      <td> <a href="https://www.facebook.com/samuelrz">lorac</a> </td>
+      <td> Java, Microsoft </td>
+      <td> 13 </td>
+      <td> 4 d </td>
+      <td> 02-26 </td>
+      <td> 1 </td>
+      <td> <a class="btn btn-primary" href="{{ app.url_generator.generate('editor_inreview') }}" role="button">
+        <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a> </td>
+    </tr>
+
+    <tr>
+      <td> <a href="https://www.facebook.com/samuelrz">interfacenn</a> </td>
+      <td> Apple </td>
+      <td> 100 </td>
+      <td> 7 d </td>
+      <td> 02-11 </td>
+      <td> 5 </td>
+      <td> <a class="btn btn-primary" href="{{ app.url_generator.generate('editor_inreview') }}" role="button">
+        <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a> </td>
+    </tr>
+
+  </table>
 </div>
 
 {% endblock %}
