@@ -114,8 +114,16 @@
 
           {% if role == 'editor'%}
             <ul class="nav nav-sidebar">
-                <li{% if 'dashboard' == active_page %} class="active"{% endif %}>
+                <li{% if 'editor_dashboard' == active_page %} class="active"{% endif %}>
                   <a href="{{ app.url_generator.generate('editor_dashboard') }}"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;Overview</a>
+                </li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li{% if 'editor_unassigned' == active_page %} class="active"{% endif %}>
+                  <a href="{{ app.url_generator.generate('editor_unassigned') }}">Unassigned submissions</a>
+                </li>
+                <li{% if 'editor_inreview' == active_page %} class="active"{% endif %}>
+                  <a href="{{ app.url_generator.generate('editor_inreview') }}">Submissions in review</a>
                 </li>
             </ul>
           {% endif %}
