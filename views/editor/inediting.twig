@@ -1,0 +1,56 @@
+{% extends "base.twig" %}
+{% set active_page = "editor_inediting" %}
+
+{% block title %}Submissions in editing{% endblock %}
+
+{% block content %}
+  <h1 class="page-header">Submissions in editing</h1>
+   <ol class="breadcrumb">
+    <li><a href="{{ app.url_generator.generate('editor_dashboard') }}">Home</a></li>
+    <li class="active">Editing</li>
+  </ol>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+
+  <!-- Table -->
+  <table class="table">
+
+    <thead>
+    	<tr>
+    		<th> Author </th>
+    		<th> Title </th>
+    		<th> Section </th>
+    		<th> Submission date </th>
+    		<th> Reviewer </th>
+    	</tr>
+    </thead>
+
+    <tr>
+    	<td> <a href="https://www.facebook.com/samuelrz">Rondeau, S</a> </td>
+    	<td> <a href="http://vignette4.wikia.nocookie.net/theamazingworldofgumball/images/f/f9/Famous-characters-Troll-face-Troll-face-poker-45046.png/revision/latest?cb=20130701113425">The Physics of Stein;Gate</a> </td>
+    	<td> SCI </td>
+    	<td> 02-25 </td>
+    	<td> <a href="https://www.facebook.com/samuelrz">sirius</a> </td>
+    </tr>
+
+    <tr>
+    	<td> Interfacenn </td>
+    	<td> Cookbook </td>
+    	<td> ART </td>
+    	<td> 02-25 </td>
+    	<td> -- </td>
+    </tr>
+
+    <tr>
+    	<td> Interfacenn </td>
+    	<td> Cookbook </td>
+    	<td> ART </td>
+    	<td> 02-25 </td>
+    	<td> -- </td>
+    </tr>
+
+  </table>
+</div>
+
+{% endblock %}

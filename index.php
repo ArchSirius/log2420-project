@@ -106,6 +106,14 @@ $app->get('/editor/inreview', function () use ($app) {
 })
 ->bind('editor_inreview');
 
+// Editor submissions in editing
+$app->get('/editor/inediting', function () use ($app) {
+    return $app['twig']->render('editor/inediting.twig', array(
+        'role' => 'editor'
+    ));
+})
+->bind('editor_inediting');
+
 // Editor assign reviewer
 $app->get('/editor/assign', function () use ($app) {
     return $app['twig']->render('editor/assign.twig', array(
