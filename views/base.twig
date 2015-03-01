@@ -151,7 +151,13 @@
     <footer class="footer">
       <div class="container">
         {% block footer %}
-          <p class="text-muted">Powered by <a href="http://pkp.sfu.ca/ojs/" target="_blank">Open Journal Systems</a></p>
+          <p class="text-muted">
+            Powered by <a href="http://pkp.sfu.ca/ojs/" target="_blank">Open Journal Systems</a>
+            <span class="pull-right">
+              <button class="btn"><span style="font-size:10px">A</span>A<span class="glyphicon glyphicon-menu-up"></span></button>
+              <button class="btn">A<span style="font-size:10px">A</span><span class="glyphicon glyphicon-menu-down"></span></button>
+            </span>
+          </p>
         {% endblock %}
       </div>
     </footer>
