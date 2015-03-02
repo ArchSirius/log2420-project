@@ -7,7 +7,9 @@
   <h1 class="page-header">Dashboard</h1>
 
   <p>
-    <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-plus"></span> New submission</button>
+    <a type="button" class="btn btn-primary btn-lg" href="{{ app.url_generator.generate('author_new_submission', {id: 1}) }}">
+      <span class="glyphicon glyphicon-plus"></span> New submission
+    </a>
   </p>
 
   <h2>Active submissions </h2>
