@@ -75,7 +75,7 @@ $app->get('/author/submissions/new', function () use ($app) {
 
 // Author submissions detail
 $app->get('/author/submissions/{id}', function ($id) use ($app) {
-    return $app['twig']->render('author/submissionDetail.twig', array(
+    return $app['twig']->render('submissionDetail.twig', array(
         'role' => 'author',
         'id' => $app->escape($id)
     ));
@@ -129,6 +129,15 @@ $app->get('/editor/archives', function () use ($app) {
     ));
 })
 ->bind('editor_archives');
+
+// Editor submissions detail
+$app->get('/editor/submissions/{id}', function ($id) use ($app) {
+    return $app['twig']->render('submissionDetail.twig', array(
+        'role' => 'editor',
+        'id' => $app->escape($id)
+    ));
+})
+->bind('editor_submission_detail');
 
 
 /**
