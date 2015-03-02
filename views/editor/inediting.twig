@@ -1,13 +1,13 @@
 {% extends "base.twig" %}
-{% set active_page = "editor_inreview" %}
+{% set active_page = "editor_inediting" %}
 
-{% block title %}Submissions in review{% endblock %}
+{% block title %}Submissions in editing{% endblock %}
 
 {% block content %}
-  <h1 class="page-header">Active reviews</h1>
+  <h1 class="page-header">Submissions in editing</h1>
    <ol class="breadcrumb">
     <li><a href="{{ app.url_generator.generate('editor_dashboard') }}">Home</a></li>
-    <li class="active">Review</li>
+    <li class="active">Editing</li>
   </ol>
 
 <div class="panel panel-default">
@@ -22,8 +22,7 @@
     		<th> Title </th>
     		<th> Section </th>
     		<th> Submission date </th>
-    		<th> Due date </th>
-            <th> Round </th>
+    		<th> Reviewer </th>
     	</tr>
     </thead>
 
@@ -32,8 +31,7 @@
     	<td> <a href="http://vignette4.wikia.nocookie.net/theamazingworldofgumball/images/f/f9/Famous-characters-Troll-face-Troll-face-poker-45046.png/revision/latest?cb=20130701113425">The Physics of Stein;Gate</a> </td>
     	<td> SCI </td>
     	<td> 02-25 </td>
-    	<td> 03-25 </td>
-        <td> 1 </td>
+    	<td> <a href="https://www.facebook.com/samuelrz">sirius</a> </td>
     </tr>
 
     <tr>
@@ -41,8 +39,7 @@
     	<td> Cookbook </td>
     	<td> ART </td>
     	<td> 02-25 </td>
-    	<td> 03-25 </td>
-        <td> 1 </td>
+    	<td> -- </td>
     </tr>
 
     <tr>
@@ -50,8 +47,7 @@
     	<td> Cookbook </td>
     	<td> ART </td>
     	<td> 02-25 </td>
-    	<td> 03-25 </td>
-        <td> 1 </td>
+    	<td> -- </td>
     </tr>
 
   </table>

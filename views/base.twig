@@ -124,8 +124,14 @@
                 <li{% if 'editor_unassigned' == active_page %} class="active"{% endif %}>
                   <a href="{{ app.url_generator.generate('editor_unassigned') }}">Unassigned submissions</a>
                 </li>
+                <li{% if 'editor_inediting' == active_page %} class="active"{% endif %}>
+                  <a href="{{ app.url_generator.generate('editor_inediting') }}">Active editing</a>
+                </li>
                 <li{% if 'editor_inreview' == active_page %} class="active"{% endif %}>
-                  <a href="{{ app.url_generator.generate('editor_inreview') }}">Submissions in review</a>
+                  <a href="{{ app.url_generator.generate('editor_inreview') }}">Active reviews</a>
+                </li>
+                <li{% if 'editor_archives' == active_page %} class="active"{% endif %}>
+                  <a href="{{ app.url_generator.generate('editor_archives') }}">Archives</a>
                 </li>
             </ul>
           {% endif %}
