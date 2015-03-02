@@ -1,84 +1,268 @@
 {% extends "base.twig" %}
-{% set active_page = "" %}
+{% set active_page = "author_submissions" %}
 
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('#next-0').click(function(){
+      $('#step0').removeClass('active');
+      $('#step1').addClass('active');
+    });
+
+    $('#next-1').click(function(){
+      $('#step1').removeClass('active');
+      $('#step2').addClass('active');
+    });
+
+    $('#next-2').click(function(){
+      $('#step2').removeClass('active');
+      $('#step3').addClass('active');
+    });
+
+    $('#prev-2').click(function(){
+      $('#step2').removeClass('active');
+      $('#step1').addClass('active');
+    });
+
+    $('#prev-3').click(function(){
+      $('#step3').removeClass('active');
+      $('#step2').addClass('active');
+    });
+  });
+  </script>
+
   <h1 class="page-header">New submission</h1>
 
-  <div>
-    <ol class="breadcrumb">
-      <li><a href="{{ app.url_generator.generate('admin_dashboard') }}">Home</a></li>
-      <li><a href="{{ app.url_generator.generate('author_submissions') }}">Submissions</a></li>
-      <li class="active">New submission</li>
-    </ol>
+  <div role="tabpanel">
 
-  </div>
+  <!-- Tab panes -->
+  <div class="tab-content">
 
-  <div>
-    <ol class="breadcrumb">
-      <li><a href="{{ app.url_generator.generate('admin_dashboard') }}">Home</a></li>
-      <li><a href="{{ app.url_generator.generate('author_submissions') }}">Submissions</a></li>
-      <li><a href="{{ app.url_generator.generate('author_new_submission') }}">New submission</a></li>
-      <li class="active">Step 1: Upload files</li>
-    </ol>
+    <div role="tabpanel" class="tab-pane active" id="step0">
+      <ol class="breadcrumb">
+          <li><a href="{{ app.url_generator.generate('admin_dashboard') }}">Home</a></li>
+          <li><a href="{{ app.url_generator.generate('author_submissions') }}">Submissions</a></li>
+          <li class="active">New submission</li>
+        </ol>
 
-    <div class="progress">
-      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="33"
-      aria-valuemin="0" aria-valuemax="100" style="width:33%">
-      Step 1/3
+      <h2>Starting a new submission</h2>
+
+      <hr />
+
+      <h3>Instructions</h3>
+        <div>
+          <o1>
+            <li>The submission file is in OpenOffice, Microsoft Word, RTF or WordPerfect document file format.</li>
+            <li>Where available, URLs for the references have been provide.</li>
+            <li>The text is single-spaced; uses a 12-point font; employs italics, rather than underlining (except with URL addresses)</li>
+            <li>All illustrations, figures, and tables are placed within the text at the appropriate points, rather than at the end.</li>
+            <li>The text adheres to the stylistic and bibliographic requirements outlined in the Author Guidelines, which is found in About the Journal.</li>
+            <li>The submission has not been previously published, nor is it before another journal for consideration (or an explanation has been provided in
+              Comments to the Editor).
+            </li>
+            <li>If submitting to a peer-reviewed section of the journal, the instructions in Ensuring a Blind Review have been followed.</li>
+          </o1>
+        </div>
+
+        <hr />
+
+        <h3>Journal's Privacy Statement</h3>
+        <ul class="list-unstyled"> 
+          <li>The names and email addresses entered in this journal site will be used exclusively for the stated purposes of this journal and will not be
+            made available for any other purpose or to any other party.
+          </li>
+          </ul>
+
+        <hr />
+        <a class="btn btn-default" href="{{ app.url_generator.generate('author_dashboard', {id: 1}) }}"></span>Cancel</a>
+        <button class="btn btn-primary pull-right" id="next-0">Start new submission</button>
+
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="step1">
+
+        <ol class="breadcrumb">
+          <li><a href="{{ app.url_generator.generate('admin_dashboard') }}">Home</a></li>
+          <li><a href="{{ app.url_generator.generate('author_submissions') }}">Submissions</a></li>
+          <li><a href="{{ app.url_generator.generate('author_new_submission') }}">New submission</a></li>
+          <li class="active">Step 1: Upload files</li>
+        </ol>
+
+        <div class="progress">
+          <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="33"
+          aria-valuemin="0" aria-valuemax="100" style="width:33%">
+          Step 1/3
+          </div>
+        </div>
+
+        <hr />
+
+        <h2>Upload files</h2>
+        <h3>Steps to upload files</h3>
+        <u1 class="list-unstyled">
+          <li>1. Choose a file.</li>
+          <li>2. Select your file in the open window.</li>
+          <li>3. Click the button "Open" on the chosen file.</li>
+          <li>4. Upload the file with the button "Upload".</li>
+          <li>5. Wait until the file is completely downloaded.</li>
+        </u1>
+
+        <hr />
+
+        <h3>Main submission file</h3>
+        <div class="form-group">
+         <input type="file" id="exampleInputFile">
+        </div>
+
+        <hr />
+
+        <h3>Uploading supplementary files (Optional)</h3>
+        <div class="form-group">
+         <input type="file" id="exampleInputFile">
+        </div>
+
+        <hr />
+        <a class="btn btn-default" href="{{ app.url_generator.generate('author_dashboard', {id: 1}) }}"></span>Cancel</a>
+        <button class="btn btn-primary pull-right" id="next-1">Next step<span class="glyphicon glyphicon-chevron-right"></span></button>
+
+    </div>
+    <div role="tabpanel" class="tab-pane" id="step2">
+
+        <ol class="breadcrumb">
+          <li><a href="{{ app.url_generator.generate('admin_dashboard') }}">Home</a></li>
+          <li><a href="{{ app.url_generator.generate('author_submissions') }}">Submissions</a></li>
+          <li><a href="{{ app.url_generator.generate('author_new_submission') }}">New submission</a></li>
+          <li class="active">Step 2: Metadata</li>
+        </ol>
+
+        <div class="progress">
+          <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="66"
+          aria-valuemin="0" aria-valuemax="100" style="width:66%">
+          Step 2/3
+          </div>
+        </div>
+
+        <hr />
+
+        <h2>Metadata</h2>
+
+        <form class="form-horizontal">
+
+          <div class="form-group">
+            <label for="inputTitle" class="col-sm-2 control-label">Title</label>
+            <div class="col-sm-10">
+              <input type="title" class="form-control" id="inputTitle" placeholder="Enter title here.">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputAbstract" class="col-sm-2 control-label">Abstract</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" rows="3" placeholder="Enter abstract here."></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputAbstract" class="col-sm-2 control-label">Language (Optional)</label>
+            <div class="col-sm-10">
+              <select class="form-control">
+                <option>No language selected</option>
+                <option>English</option>
+                <option>Francais</option>
+                <option>Spanish</option>
+                <option>Québecois</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputAbstract" class="col-sm-2 control-label">Contributors and supporting agencies (Optional)</label>
+            <div class="col-sm-10">
+              <input type="abstract" class="form-control" id="inputAbstract" placeholder="Enter a new contributor/agencie here.">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputAbstract" class="col-sm-2 control-label">References (Optional)</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" rows="3" placeholder="Separate individual references with a blank line."></textarea>
+            </div>
+          </div>
+        </form>
+
+        <hr />
+        <a class="btn btn-default" href="{{ app.url_generator.generate('author_dashboard', {id: 1}) }}"></span>Cancel</a>
+        <button class="btn btn-primary pull-right" id="next-2">Next step<span class="glyphicon glyphicon-chevron-right"></span></button>
+        <button class="btn pull-right" id="prev-2" style="margin-right:10px;"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button>
       </div>
+      <div role="tabpanel" class="tab-pane" id="step3">
+        <ol class="breadcrumb">
+          <li><a href="{{ app.url_generator.generate('admin_dashboard') }}">Home</a></li>
+          <li><a href="{{ app.url_generator.generate('author_submissions') }}">Submissions</a></li>
+          <li><a href="{{ app.url_generator.generate('author_new_submission') }}">New submission</a></li>
+          <li class="active">Step 3: Confirmation</li>
+        </ol>
+
+        <div class="progress">
+          <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100"
+          aria-valuemin="0" aria-valuemax="100" style="width:100%">
+          Step 3/3
+          </div>
+        </div>
+
+        <h2>Confirmation</h2>
+
+        <h3>File summary</h3>
+
+        <div class="panel panel-default">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Original file name</th>
+                <th>File name</th>
+                <th>Type</th>
+                <th>File size</th>
+                <th>Date upload</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href=""> TextForSubmission.PDF</a></td>
+                <td>8-7-1-SM.PDF</td>
+                <td>Main file</td>
+                <td>16 KB</td>
+                <td>2015-01-04</td>
+              </tr>
+              <tr>
+                <td><a href=""> ImageForSubmission.JPEG</a></td>
+                <td>8-7-1-SM.JPEG</td>
+                <td>Secondary file</td>
+                <td>42 KB</td>
+                <td>2015-01-04</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr />
+
+        <h3>Comments for the editor (Optional)</h3>
+
+        <div>
+          <td width="80%" class="value"><textarea name="commentsToEditor" id="commentsToEditor" rows="3" cols="40" class="textArea"></textarea></td>
+        </div>
+
+        <hr />
+        <a class="btn btn-default" href="{{ app.url_generator.generate('author_dashboard', {id: 1}) }}"></span>Cancel</a>
+        <button class="btn btn-primary pull-right" id="finish">Finish submission</button>
+        <!-- <a type="button" class="btn btn-primary pull-righ" href="author_dashboard">Finish submission</a> -->
+        <button class="btn pull-right" id="prev-3" style="margin-right:10px;"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button>
+
     </div>
-
-    <button class="btn btn-default" type="submit">Next step</button>
-    <button class="btn btn-default" type="submit">Cancel</button>
-
   </div>
 
-  <div>
-    <ol class="breadcrumb">
-      <li><a href="{{ app.url_generator.generate('admin_dashboard') }}">Home</a></li>
-      <li><a href="{{ app.url_generator.generate('author_submissions') }}">Submissions</a></li>
-      <li><a href="{{ app.url_generator.generate('author_submissions') }}">New submission</a></li>
-      <li class="active">Step 2: Metadata</li>
-    </ol>
-
-    <div class="progress">
-      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="66"
-      aria-valuemin="0" aria-valuemax="100" style="width:66%">
-      Step 2/3
-      </div>
-    </div>
-
-    <button class="btn btn-default" type="submit">Next step</button>
-    <button class="btn btn-default" type="submit">Previous step</button>
-    <button class="btn btn-default" type="submit">Cancel</button>
-
-  </div>
-
-  <div>
-    <ol class="breadcrumb">
-      <li><a href="{{ app.url_generator.generate('admin_dashboard') }}">Home</a></li>
-      <li><a href="{{ app.url_generator.generate('author_submissions') }}">Submissions</a></li>
-      <li><a href="{{ app.url_generator.generate('author_submissions') }}">New submission</a></li>
-      <li class="active">Step 3: Confirmation</li>
-    </ol>
-
-    <div class="progress">
-      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100"
-      aria-valuemin="0" aria-valuemax="100" style="width:100%">
-      Step 3/3
-      </div>
-    </div>
-
-    <div>
-      <td width="80%" class="value"><textarea name="commentsToEditor" id="commentsToEditor" rows="3" cols="40" class="textArea"></textarea></td>
-    </div>
-
-    <button class="btn btn-default" type="submit">Finish submission</button>
-    <button class="btn btn-default" type="submit">Previous step</button>
-    <button class="btn btn-default" type="submit">Cancel </button>
-
-  </div>
+</div>
 
 {% endblock %}
