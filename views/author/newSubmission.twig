@@ -52,18 +52,24 @@
       <h3>Instructions</h3>
         <div>
           <o1>
-            <li>On this page, click Browse (or Choose File) which opens a Choose File window for locating the file on the hard drive of your computer.</li>
-            <li>Locate the file you wish to submit and highlight it.</li>
-            <li>Click Open on the Choose File window, which places the name of the file on this page.</li>
-            <li>Click Upload on this page, which uploads the file from the computer to the journal's web site and renames it following the journal's conventions.</li>
-            <li>Once the submission is uploaded, click Save and Continue at the bottom of this page.</li>
+            <li>The submission file is in OpenOffice, Microsoft Word, RTF or WordPerfect document file format.</li>
+            <li>Where available, URLs for the references have been provide.</li>
+            <li>The text is single-spaced; uses a 12-point font; employs italics, rather than underlining (except with URL addresses)</li>
+            <li>All illustrations, figures, and tables are placed within the text at the appropriate points, rather than at the end.</li>
+            <li>The text adheres to the stylistic and bibliographic requirements outlined in the Author Guidelines, which is found in About the Journal.</li>
+            <li>The submission has not been previously published, nor is it before another journal for consideration (or an explanation has been provided in
+              Comments to the Editor).
+            </li>
+            <li>If submitting to a peer-reviewed section of the journal, the instructions in Ensuring a Blind Review have been followed.</li>
           </o1>
         </div>
 
         <h3>Journal's Privacy Statement</h3>
-        <ul class="list-unstyled"> The names and email addresses entered in this journal site will be used exclusively for the stated purposes of this journal and will not be
-          made available for any other purpose or to any other party.
-        </ul>
+        <ul class="list-unstyled"> 
+          <li>The names and email addresses entered in this journal site will be used exclusively for the stated purposes of this journal and will not be
+            made available for any other purpose or to any other party.
+          </li>
+          </ul>
 
         <hr />
         <a class="btn btn-default" href="{{ app.url_generator.generate('author_dashboard', {id: 1}) }}"></span>Cancel</a>
@@ -91,7 +97,7 @@
         <h3>Steps to upload files</h3>
         <u1 class="list-unstyled">
           <li>1. Choose a file.</li>
-          <li>2. Select your file.</li>
+          <li>2. Select your file in the open window.</li>
           <li>3. Click the button "Open" on the chosen file.</li>
           <li>4. Upload the file with the button "Upload".</li>
           <li>5. Wait until the file is completely downloaded.</li>
@@ -129,12 +135,46 @@
           </div>
         </div>
 
-        <h3>Title</h3>
-        <input type="text" class="form-control inputlg" />
-        <h3>Abstract</h3>
-        <h3>Language</h3>
-        <h3>Contributors and Supporting Agencies</h3>
-        <h3>References</h3>
+        <form class="form-horizontal">
+         <div class="form-group">
+           <label for="inputTitle" class="col-sm-2 control-label">Title</label>
+           <div class="col-sm-10">
+             <input type="title" class="form-control" id="inputTitle" placeholder="Enter title">
+           </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputAbstract" class="col-sm-2 control-label">Abstract</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" rows="3"></textarea>
+          </div>
+         </div>
+
+        <div class="form-group">
+          <label for="inputAbstract" class="col-sm-2 control-label">Abstract</label>
+          <div class="col-sm-10">
+            <select class="form-control">
+               <option>English</option>
+               <option>Francais</option>
+               <option>Spanish</option>
+               <option>Québecois</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="inputAbstract" class="col-sm-2 control-label">Contributors and supporting agencies</label>
+          <div class="col-sm-10">
+            <input type="abstract" class="form-control" id="inputAbstract" placeholder="Enter a new contributor/agencie">
+          </div>
+         </div>
+        
+        <div class="form-group">
+          <label for="inputAbstract" class="col-sm-2 control-label">References</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" rows="3"></textarea>
+          </div>
+         </div>
 
         <hr />
         <a class="btn btn-default" href="{{ app.url_generator.generate('author_dashboard', {id: 1}) }}"></span>Cancel</a>
