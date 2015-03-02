@@ -102,7 +102,7 @@
           {% if role == 'admin'%}
             <ul class="nav nav-sidebar">
                 <li{% if 'dashboard' == active_page %} class="active"{% endif %}>
-                  <a href="{{ app.url_generator.generate('admin_dashboard') }}"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;Overview</a>
+                  <a href="{{ app.url_generator.generate('admin_dashboard') }}"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;Dashboard</a>
                 </li>
             </ul>
             <ul class="nav nav-sidebar">
@@ -115,7 +115,7 @@
           {% if role == 'editor'%}
             <ul class="nav nav-sidebar">
                 <li{% if 'editor_dashboard' == active_page %} class="active"{% endif %}>
-                  <a href="{{ app.url_generator.generate('editor_dashboard') }}"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;Overview</a>
+                  <a href="{{ app.url_generator.generate('editor_dashboard') }}"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;Dashboard</a>
                 </li>
             </ul>
             <ul class="nav nav-sidebar">
@@ -137,7 +137,7 @@
           {% if role == 'author'%}
             <ul class="nav nav-sidebar">
                 <li{% if 'dashboard' == active_page %} class="active"{% endif %}>
-                  <a href="{{ app.url_generator.generate('author_dashboard') }}"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;Overview</a>
+                  <a href="{{ app.url_generator.generate('author_dashboard') }}"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;Dashboard</a>
                 </li>
             </ul>
             <ul class="nav nav-sidebar">
@@ -150,7 +150,7 @@
           {% if role == 'reviwer'%}
             <ul class="nav nav-sidebar">
                 <li{% if 'dashboard' == active_page %} class="active"{% endif %}>
-                  <a href="{{ app.url_generator.generate('reviwer_dashboard') }}"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;Overview</a>
+                  <a href="{{ app.url_generator.generate('reviwer_dashboard') }}"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;Dashboard</a>
                 </li>
             </ul>
           {% endif %}
