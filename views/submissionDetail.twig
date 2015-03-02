@@ -193,7 +193,72 @@
           </div>
           <div role="tabpanel" class="tab-pane" id="editing">
             <h3>Copyediting</h3>
+            <div class="tabbable tabs-left">
+              <ul class="nav nav-tabs">
+                <li><a href="#a" class="bg-primary" data-toggle="tab">1. Initial Copyedit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-menu-right"></span></a></li>
+                <li><a href="#b" class="bg-primary" data-toggle="tab">2. Author Copyedit&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-menu-right"></span></a></li>
+                <li class="active"><a href="#c" class="bg-primary" data-toggle="tab">3. Final Copyedit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-menu-right"></span></a></li>
+              </ul>
+              <div class="tab-content" style="min-height:150px">
+                <div class="tab-pane" id="a">
+                  <div>
+                    <table>
+                      <tr>
+                        <th style="width: 150px">Request</th>
+                        <td>--</td>
+                      </tr>
+                      <tr>
+                        <th>Underway</th>
+                        <td>--</td>
+                      </tr>
+                      <tr>
+                        <th>Complete</th>
+                        <td>2015-01-05</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <div class="well">
+                            <a href="#"><span class="glyphicon glyphicon-download-alt"></span> 1-2-2.CFD.docx</a>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="tab-pane" id="b">
+                    <table>
+                      <tr>
+                        <th style="width: 150px">Request</th>
+                        <td>2015-01-05</td>
+                      </tr>
+                      <tr>
+                        <th>Underway</th>
+                        <td>2015-01-05</td>
+                      </tr>
+                      <tr>
+                        <th>Complete</th>
+                        <td>--</td>
+                      </tr>
+                      <tr>
+                        <th>&nbsp</th>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <button class="btn btn-lg" type="button"  data-toggle="modal" data-target="#uploadModal"><span class="glyphicon glyphicon-upload"></span> Upload file</button>
+                          <button class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-envelope"></span> Complete</button>
+                        </td>
+                      </tr>
+                    </table>
+                </div>
+                <div class="tab-pane active" id="c">
+                  <em>Waiting for the final copyedit. The editor may complete this action soon.</em>
+                </div>
+              </div>
+            </div>
+            <hr />
+
             <h3>Layout</h3>
+            <hr />
             <h3>Proofreading</h3>
           </div>
           <div role="tabpanel" class="tab-pane" id="metedata">
@@ -241,6 +306,25 @@
           2015-02-20
         </div>
         
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="uploadModalLabel">Upload file</h4>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">Send</button>
+        </div>
+      </div>
     </div>
   </div>
 
