@@ -122,6 +122,14 @@ $app->get('/editor/assign', function () use ($app) {
 })
 ->bind('editor_assign');
 
+// Editor editing page
+$app->get('/editor/editing', function () use ($app) {
+    return $app['twig']->render('editor/editing.twig', array(
+        'role' => 'editor'
+    ));
+})
+->bind('editor_editing');
+
 // Editor archives
 $app->get('/editor/archives', function () use ($app) {
     return $app['twig']->render('editor/archives.twig', array(
