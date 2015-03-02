@@ -49,6 +49,8 @@
 
       <h2>Starting a new submission</h2>
 
+      <hr />
+
       <h3>Instructions</h3>
         <div>
           <o1>
@@ -64,6 +66,8 @@
           </o1>
         </div>
 
+        <hr />
+
         <h3>Journal's Privacy Statement</h3>
         <ul class="list-unstyled"> 
           <li>The names and email addresses entered in this journal site will be used exclusively for the stated purposes of this journal and will not be
@@ -73,7 +77,7 @@
 
         <hr />
         <a class="btn btn-default" href="{{ app.url_generator.generate('author_dashboard', {id: 1}) }}"></span>Cancel</a>
-        <button class="btn btn-primary pull-right" type="submit" id="next-0">Start new submission</button>
+        <button class="btn btn-primary pull-right" id="next-0">Start new submission</button>
 
     </div>
 
@@ -93,6 +97,8 @@
           </div>
         </div>
 
+        <hr />
+
         <h2>Upload files</h2>
         <h3>Steps to upload files</h3>
         <u1 class="list-unstyled">
@@ -102,10 +108,15 @@
           <li>4. Upload the file with the button "Upload".</li>
           <li>5. Wait until the file is completely downloaded.</li>
         </u1>
+
+        <hr />
+        
         <h3>Main submission file</h3>
         <div class="form-group">
          <input type="file" id="exampleInputFile">
         </div>
+
+        <hr />
 
         <h3>Uploading supplementary files (Optional)</h3>
         <div class="form-group">
@@ -114,7 +125,7 @@
 
         <hr />
         <a class="btn btn-default" href="{{ app.url_generator.generate('author_dashboard', {id: 1}) }}"></span>Cancel</a>
-        <button class="btn btn-primary pull-right" type="submit" id="next-1">Next step<span class="glyphicon glyphicon-chevron-right"></span></button>
+        <button class="btn btn-primary pull-right" id="next-1">Next step<span class="glyphicon glyphicon-chevron-right"></span></button>
 
     </div>
     <div role="tabpanel" class="tab-pane" id="step2">
@@ -126,8 +137,6 @@
           <li class="active">Step 2: Metadata</li>
         </ol>
 
-        <h2>Metadata</h2>
-
         <div class="progress">
           <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="66"
           aria-valuemin="0" aria-valuemax="100" style="width:66%">
@@ -135,61 +144,68 @@
           </div>
         </div>
 
+        <hr />
+
+        <h2>Metadata</h2>
+
         <form class="form-horizontal">
-         <div class="form-group">
-           <label for="inputTitle" class="col-sm-2 control-label">Title</label>
-           <div class="col-sm-10">
-             <input type="title" class="form-control" id="inputTitle" placeholder="Enter title">
-           </div>
-        </div>
 
-        <div class="form-group">
-          <label for="inputAbstract" class="col-sm-2 control-label">Abstract</label>
-          <div class="col-sm-10">
-            <textarea class="form-control" rows="3"></textarea>
+          <div class="form-group">
+            <label for="inputTitle" class="col-sm-2 control-label">Title</label>
+            <div class="col-sm-10">
+              <input type="title" class="form-control" id="inputTitle" placeholder="Enter title">
+            </div>
           </div>
-         </div>
 
-        <div class="form-group">
-          <label for="inputAbstract" class="col-sm-2 control-label">Abstract</label>
-          <div class="col-sm-10">
-            <select class="form-control">
-               <option>English</option>
-               <option>Francais</option>
-               <option>Spanish</option>
-               <option>Québecois</option>
-            </select>
+          <div class="form-group">
+            <label for="inputAbstract" class="col-sm-2 control-label">Abstract</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
           </div>
-        </div>
-        
-        <div class="form-group">
-          <label for="inputAbstract" class="col-sm-2 control-label">Contributors and supporting agencies</label>
-          <div class="col-sm-10">
-            <input type="abstract" class="form-control" id="inputAbstract" placeholder="Enter a new contributor/agencie">
+
+          <div class="form-group">
+            <label for="inputAbstract" class="col-sm-2 control-label">Language (Optional)</label>
+            <div class="col-sm-10">
+              <select class="form-control">
+                <option>No language selected</option>
+                <option>English</option>
+                <option>Francais</option>
+                <option>Spanish</option>
+                <option>Québecois</option>
+              </select>
+            </div>
           </div>
-         </div>
-        
-        <div class="form-group">
-          <label for="inputAbstract" class="col-sm-2 control-label">References</label>
-          <div class="col-sm-10">
-            <textarea class="form-control" rows="3"></textarea>
+
+          <div class="form-group">
+            <label for="inputAbstract" class="col-sm-2 control-label">Contributors and supporting agencies (Optional)</label>
+            <div class="col-sm-10">
+              <input type="abstract" class="form-control" id="inputAbstract" placeholder="Enter a new contributor/agencie">
+            </div>
           </div>
-         </div>
+
+          <div class="form-group">
+            <label for="inputAbstract" class="col-sm-2 control-label">References</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+          </div>
+        </form>
 
         <hr />
         <a class="btn btn-default" href="{{ app.url_generator.generate('author_dashboard', {id: 1}) }}"></span>Cancel</a>
-        <button class="btn btn-primary pull-right" type="submit" id="next-2">Next step<span class="glyphicon glyphicon-chevron-right"></span></button>
-        <button class="btn pull-right" type="submit" id="prev-2" style="margin-right:10px;"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button>
-
-    </div>
-    <div role="tabpanel" class="tab-pane" id="step3">
-
+        <button class="btn btn-primary pull-right" id="next-2">Next step<span class="glyphicon glyphicon-chevron-right"></span></button>
+        <button class="btn pull-right" id="prev-2" style="margin-right:10px;"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="step3">
         <ol class="breadcrumb">
           <li><a href="{{ app.url_generator.generate('admin_dashboard') }}">Home</a></li>
           <li><a href="{{ app.url_generator.generate('author_submissions') }}">Submissions</a></li>
           <li><a href="{{ app.url_generator.generate('author_new_submission') }}">New submission</a></li>
           <li class="active">Step 3: Confirmation</li>
         </ol>
+
+        <hr />
 
         <h2>Confirmation</h2>
 
@@ -200,14 +216,50 @@
           </div>
         </div>
 
+        <h3>File summary</h3>
+
+        <div class="panel panel-default">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Original file name</th>
+                <th>File name</th>
+                <th>Type</th>
+                <th>File size</th>
+                <th>Date upload</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href=""> TextForSubmission.PDF</a></td>
+                <td>8-7-1-SM.PDF</td>
+                <td>Main file</td>
+                <td>16 KB</td>
+                <td>2015-01-04</td>
+              </tr>
+              <tr>
+                <td><a href=""> ImageForSubmission.JPEG</a></td>
+                <td>8-7-1-SM.JPEG</td>
+                <td>Secondary file</td>
+                <td>42 KB</td>
+                <td>2015-01-04</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr />
+
+        <h3>Comments for the editor (Optional)</h3>
+
         <div>
           <td width="80%" class="value"><textarea name="commentsToEditor" id="commentsToEditor" rows="3" cols="40" class="textArea"></textarea></td>
         </div>
 
         <hr />
         <a class="btn btn-default" href="{{ app.url_generator.generate('author_dashboard', {id: 1}) }}"></span>Cancel</a>
-        <button class="btn btn-primary pull-right" type="submit" id="finish">Finish submission</button>
-        <button class="btn pull-right" type="submit" id="prev-3" style="margin-right:10px;"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button>
+        <button class="btn btn-primary pull-right" id="finish">Finish submission</button>
+        <button class="btn pull-right" id="prev-3" style="margin-right:10px;"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button>
 
     </div>
   </div>
