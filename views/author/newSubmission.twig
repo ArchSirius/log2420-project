@@ -176,11 +176,21 @@
 
           <hr />
 
-         <div class="form-group">
-            <label for="inputTitle" class="col-sm-2 control-label">Authors</label>
-            <div class="col-sm-10">
-              <input type="title" class="form-control" id="inputTitle" placeholder="Enter title here.">
-            </div>
+          <div class="form-group">
+            <label for="inputTitle" class="col-md-2 control-label">Authors</label>
+              <div class="col-md-10">
+                <div class="col-md-3">
+                  <input type="title" class="form-control" id="inputTitle" placeholder="Search author...">
+                </div>
+                <div class="col-md-1" style="margin-left:-20px">
+                  <button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+                </div>
+                <div class="col-md-3">
+                  <a href="#" class="btn btn-default" data-toggle="modal" data-target="#createAuthorModal">Create author</a>
+                </div><br /><br />
+                <div style="margin-top:10px;margin-left:15px"><button type="button" class="inline-close">×</button></small>&nbsp;Michel Desmarais</div>
+                <div style="margin-top:10px;margin-left:15px"><button type="button" class="inline-close">×</button></small>&nbsp;Monsieur Exemple</div>
+              </div>
           </div>
 
           <hr />
@@ -343,5 +353,24 @@
   </div>
 
 </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="createAuthorModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="uploadModalLabel">Create new author</h4>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 {% endblock %}
