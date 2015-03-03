@@ -147,6 +147,30 @@ $app->get('/editor/submissions/{id}', function ($id) use ($app) {
 })
 ->bind('editor_submission_detail');
 
+// Reviewer home page
+$app->get('/reviewer', function () use ($app) {
+    return $app['twig']->render('reviewer/dashboard.twig', array(
+        'role' => 'reviewer'
+    ));
+})
+->bind('reviewer_dashboard');
+
+// Reviewer inbox
+$app->get('/reviewer/inbox', function () use ($app) {
+    return $app['twig']->render('reviewer/inbox.twig', array(
+        'role' => 'reviewer'
+    ));
+})
+->bind('reviewer_inbox');
+
+// Reviewer reviewing page
+$app->get('/reviewer/reviewing', function () use ($app) {
+    return $app['twig']->render('reviewer/reviewing.twig', array(
+        'role' => 'reviewer'
+    ));
+})
+->bind('reviewer_reviewing');
+
 
 /**
  * Run the application

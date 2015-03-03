@@ -149,10 +149,18 @@
             </ul>
           {% endif %}
 
-          {% if role == 'reviwer'%}
+          {% if role == 'reviewer'%}
             <ul class="nav nav-sidebar">
-                <li{% if 'dashboard' == active_page %} class="active"{% endif %}>
-                  <a href="{{ app.url_generator.generate('reviwer_dashboard') }}"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;Dashboard</a>
+                <li{% if 'reviewer_dashboard' == active_page %} class="active"{% endif %}>
+                  <a href="{{ app.url_generator.generate('reviewer_dashboard') }}"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;Dashboard</a>
+                </li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li{% if 'reviewer_inbox' == active_page %} class="active"{% endif %}>
+                  <a href="{{ app.url_generator.generate('reviewer_inbox') }}">Inbox</a>
+                </li>
+                <li{% if 'reviewer_reviewing' == active_page %} class="active"{% endif %}>
+                  <a href="{{ app.url_generator.generate('reviewer_reviewing') }}">Active reviewing</a>
                 </li>
             </ul>
           {% endif %}
