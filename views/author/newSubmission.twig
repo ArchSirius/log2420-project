@@ -73,9 +73,9 @@
           <li>The names and email addresses entered in this journal site will be used exclusively for the stated purposes of this journal and will not be
             made available for any other purpose or to any other party.
           </li>
-          </ul>
-
+        </ul>
         <hr />
+
         <a class="btn btn-default" href="{{ app.url_generator.generate('author_dashboard', {id: 1}) }}"></span>Cancel</a>
         <button class="btn btn-primary pull-right" id="next-0">Start new submission</button>
 
@@ -97,9 +97,9 @@
           </div>
         </div>
 
-        <hr />
-
         <h2>Upload files</h2>
+
+        <hr />
         <h3>Steps to upload files</h3>
         <u1 class="list-unstyled">
           <li>1. Choose a file.</li>
@@ -112,16 +112,26 @@
         <hr />
 
         <h3>Main submission file</h3>
-        <div class="form-group">
-         <input type="file" id="exampleInputFile">
-        </div>
+        <form class="form-inline">
+          <div class="form-group">
+            <div class="form-group">
+              <input type="file" id="exampleInputFile">
+            </div>
+            <button type="button" class="btn btn-default btn-sm">Upload</button>
+          </div>
+        </form>
 
         <hr />
 
         <h3>Uploading supplementary files (Optional)</h3>
-        <div class="form-group">
-         <input type="file" id="exampleInputFile">
-        </div>
+        <form class="form-inline">
+          <div class="form-group">
+            <div class="form-group">
+              <input type="file" id="exampleInputFile">
+            </div>
+            <button type="button" class="btn btn-default btn-sm">Upload</button>
+          </div>
+        </form>
 
         <hr />
         <a class="btn btn-default" href="{{ app.url_generator.generate('author_dashboard', {id: 1}) }}"></span>Cancel</a>
@@ -144,9 +154,9 @@
           </div>
         </div>
 
-        <hr />
-
         <h2>Metadata</h2>
+
+        <hr />
 
         <form class="form-horizontal">
 
@@ -163,6 +173,17 @@
               <textarea class="form-control" rows="3" placeholder="Enter abstract here."></textarea>
             </div>
           </div>
+
+          <hr />
+
+         <div class="form-group">
+            <label for="inputTitle" class="col-sm-2 control-label">Authors</label>
+            <div class="col-sm-10">
+              <input type="title" class="form-control" id="inputTitle" placeholder="Enter title here.">
+            </div>
+          </div>
+
+          <hr />
 
           <div class="form-group">
             <label for="inputAbstract" class="col-sm-2 control-label">Language (Optional)</label>
@@ -214,6 +235,45 @@
 
         <h2>Confirmation</h2>
 
+        <hr />
+
+        <h3>Submission informations</h3>
+
+          <dl class="dl-horizontal">
+            <dt>Title</dt>
+            <dd>Analyse d'un interface graphique</dd>
+          </dl>
+
+          <dl class="dl-horizontal">
+            <dt>Abstract</dt>
+            <dd>Suspendisse potenti. Vivamus tempus tellus vel erat porta, ut semper ipsum rhoncus. Ut ut vulputate risus. Sed vitae convallis nunc. Nunc sed urna et tortor imperdiet ultricies sed quis dolor. Nam sed laoreet tellus. Curabitur mattis est vel mauris faucibus, vitae maximus dui fringilla.
+            </dd>
+          </dl>
+
+          <dl class="dl-horizontal">
+            <dt>Authors</dt>
+            <dd>Maxime Clavel</dd>
+            <dd>Pier-Olivier Guimond-Cataford</dd>
+          </dl>
+
+          <dl class="dl-horizontal">
+            <dt>Language</dt>
+            <dd>French</dd>
+          </dl>
+
+          <dl class="dl-horizontal">
+            <dt>Contributors and supporting agencies</dt>
+            <dd>Michel Desmarais</dd>
+          </dl>
+
+          <dl class="dl-horizontal">
+            <dt>References</dt>
+            <dd>http://www.groupes.polymtl.ca/log2420/</dd>
+            <dd>https://pkp.sfu.ca/wiki/index.php?title=OJS_Documentation</dd>
+          </dl>
+
+        <hr />
+
         <h3>File summary</h3>
 
         <div class="panel panel-default">
@@ -237,8 +297,8 @@
               </tr>
               <tr>
                 <td><a href=""> ImageForSubmission.JPEG</a></td>
-                <td>8-7-1-SM.JPEG</td>
-                <td>Secondary file</td>
+                <td>8-3-5-SM.JPEG</td>
+                <td>Supplementary file</td>
                 <td>42 KB</td>
                 <td>2015-01-04</td>
               </tr>
@@ -255,11 +315,15 @@
         </div>
 
         <hr />
-        <a class="btn btn-default" href="{{ app.url_generator.generate('author_dashboard', {id: 1}) }}"></span>Cancel</a>
-        <button class="btn btn-primary pull-right" id="finish">Finish submission</button>
-        <!-- <a type="button" class="btn btn-primary pull-righ" href="author_dashboard">Finish submission</a> -->
-        <button class="btn pull-right" id="prev-3" style="margin-right:10px;"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button>
 
+        The submission's principal contact will receive an acknowledgement by email and will be able to view the submission's progress through the editorial process by logging in to the journal web site. Thank you for your interest in publishing with us.
+        <hr />
+
+        <a class="btn btn-default" href="{{ app.url_generator.generate('author_dashboard', {id: 1}) }}"></span>Cancel</a>
+        <a type="button" class="btn btn-primary pull-right" href="{{ app.url_generator.generate('author_dashboard', {id: 1}) }}"> Send submission
+          <span class="glyphicon glyphicon-ok"></span>
+        </a>
+        <button class="btn pull-right" id="prev-3" style="margin-right:10px;"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button>
     </div>
   </div>
 
