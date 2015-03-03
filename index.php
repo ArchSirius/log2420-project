@@ -147,6 +147,14 @@ $app->get('/editor/submissions/{id}', function ($id) use ($app) {
 })
 ->bind('editor_submission_detail');
 
+// Editor journals list
+$app->get('/editor/journals', function () use ($app) {
+    return $app['twig']->render('editor/journals.twig', array(
+        'role' => 'editor',
+    ));
+})
+->bind('editor_journals');
+
 // Reviewer home page
 $app->get('/reviewer', function () use ($app) {
     return $app['twig']->render('reviewer/dashboard.twig', array(
