@@ -128,7 +128,7 @@
             {% if 'editor_journals' != active_page %}
             <ul class="nav nav-sidebar">
                 <li{% if 'editor_unassigned' == active_page %} class="active"{% endif %}>
-                  <a href="{{ app.url_generator.generate('editor_unassigned') }}">Unassigned submissions</a>
+                  <a href="{{ app.url_generator.generate('editor_unassigned') }}">New submissions</a>
                 </li>
                 <li{% if 'editor_inediting' == active_page %} class="active"{% endif %}>
                   <a href="{{ app.url_generator.generate('editor_inediting') }}">Active editing</a>
