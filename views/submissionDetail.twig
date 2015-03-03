@@ -28,8 +28,16 @@
                 </td>
               </tr>
               <tr>
-                <th>Section</th>
-                <td>Articles</td>
+                <th>
+                  Section
+                </th>
+                <td>
+                  <select class="form-control">
+                    <option selected>Article</option>
+                    <option>Section 2</option>
+                    <option>Section 3</option>
+                  </select>
+                </td>
               </tr>
               <tr>
                 <th>Editor</th>
@@ -51,7 +59,14 @@
           <li role="presentation"><a href="#review" aria-controls="review" role="tab" data-toggle="tab">Review</a></li>
           <li role="presentation"><a href="#editing" aria-controls="editing" role="tab" data-toggle="tab">Editing</a></li>
           <li role="presentation"><a href="#metedata" aria-controls="metedata" role="tab" data-toggle="tab">Metadata</a></li>
-          <li role="presentation"><a href="#refbacks" aria-controls="refbacks" role="tab" data-toggle="tab">Refbacks</a></li>
+          {% if role == 'author' %}
+            <li role="presentation"><a href="#refbacks" aria-controls="refbacks" role="tab" data-toggle="tab">Refbacks</a></li>
+          {% endif %}
+          {% if role == 'editor' %}
+            <li role="presentation"><a href="#references" aria-controls="references" role="tab" data-toggle="tab">References</a></li>
+            <li role="presentation"><a href="#editors" aria-controls="editors" role="tab" data-toggle="tab">Editors</a></li>
+            <li role="presentation"><a href="#reviwers" aria-controls="reviwers" role="tab" data-toggle="tab">Reviewers</a></li>
+          {% endif %}
         </ul>
 
         <!-- Tab panes -->
@@ -262,7 +277,7 @@
             <h3>Proofreading</h3>
           </div>
           <div role="tabpanel" class="tab-pane" id="metedata">
-
+            [Formulaire d'édition]
           </div>
           <div role="tabpanel" class="tab-pane" id="refbacks">
             <table class="table">
@@ -283,6 +298,15 @@
               </tbody>
             </table>
           </div>
+          <div role="tabpanel" class="tab-pane" id="references">
+            [WELCOME TO THE CITATION MARKUP ASSISTANT!]
+          </div>
+          <div role="tabpanel" class="tab-pane" id="editors">
+            ...
+          </div>
+          <div role="tabpanel" class="tab-pane" id="reviwers">
+            ...
+          </div>
         </div>
 
       </div>
@@ -295,7 +319,17 @@
         </div>
         <div class="form-group">
           <label >Status</label><br />
-          <em>Published</em><br />since 2015-03-01
+          {% if role == 'author'%}
+            <em>Published</em><br />since 2015-03-01
+          {% endif %}
+          {% if role == 'editor'%}
+            <select class="form-control">
+              <option>In editing</option>
+              <option selected>Published</option>
+              <option>Rejected</option>
+            </select>
+            <br />since 2015-03-01
+          {% endif %}
         </div>
         <div class="form-group">
           <label>Last modified</label><br />
@@ -305,8 +339,10 @@
           <label>Date submitted</label><br />
           2015-02-20
         </div>
+
+        <button class="btn"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> View history</button>
         
-    </div>
+    </form>
   </div>
 
   <!-- Modal -->
