@@ -40,11 +40,16 @@
                   Section
                 </th>
                 <td>
-                  <select class="form-control">
-                    <option selected>Article</option>
-                    <option>Section 2</option>
-                    <option>Section 3</option>
-                  </select>
+                  {% if role == 'editor' %}
+                    <select class="form-control">
+                      <option selected>Article</option>
+                      <option>Section 2</option>
+                      <option>Section 3</option>
+                    </select>
+                  {% endif %}
+                  {% if role == 'author' %}
+                      Article
+                  {% endif %}
                 </td>
               </tr>
               <tr>
@@ -238,17 +243,6 @@
             </table>
           </div>
           <div role="tabpanel" class="tab-pane" id="editing">
-            <h3>Editors</h3>
-            <div style="width: 200px;">
-              <hr />
-              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="#">sirius</a><br>
-              <hr />
-            </div>
-            <button type="button" class="btn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-              &nbsp;Add editor</button>&nbsp;
-            <button type="button" class="btn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-              &nbsp;Add self</button>
             <h3>Copyediting</h3>
             <div class="tabbable tabs-left">
               <ul class="nav nav-tabs">
@@ -301,7 +295,7 @@
                       </tr>
                       <tr>
                         <td colspan="2">
-                          <button class="btn btn-lg" type="button"  data-toggle="modal" data-target="#uploadModal">
+                          <button class="btn btn-lg" type="button" data-toggle="modal" data-target="#uploadModal">
                             <span class="glyphicon glyphicon-upload"></span> Upload file
                           </button>
                           <button class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-envelope"></span> Complete</button>
@@ -372,6 +366,21 @@
                   {% endif %}
               </div>
             </div>
+            <hr />
+
+            {% if role == 'editor' %}
+              <h3>Editors</h3>
+              <div style="width: 200px;">
+                <hr />
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="#">sirius</a><br>
+                <hr />
+              </div>
+              <button type="button" class="btn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                &nbsp;Add editor</button>&nbsp;
+              <button type="button" class="btn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                &nbsp;Add self</button>
+            {% endif %}
             <hr />
 
             {% if role == 'editor' %}
