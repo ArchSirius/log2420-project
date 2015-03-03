@@ -4,6 +4,14 @@
 {% block title %}Submission{% endblock %}
 
 {% block content %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#decisionSelect').on('change', function() {
+        $('#decisionAlert').removeClass('hidden');
+      });
+    });
+  </script>
+
   <h1 class="page-header">Submission #{{ id }} <small> - Published</small></h1>
   <ol class="breadcrumb">
     <li><a href="{{ app.url_generator.generate('author_dashboard') }}">Home</a></li>
@@ -183,11 +191,36 @@
             </table>
             <hr>
 
-            <h3>Editor Decision <button class="btn"><span class="glyphicon glyphicon-envelope"></span> Notify Editor</button></h3>
+            <h3>Editor Decision <button class="btn"><span class="glyphicon glyphicon-envelope"></span> 
+              {% if role == 'author'%}
+              Notify Editor
+              {% endif %}
+              {% if role == 'editor'%}
+              Notify Author
+              {% endif %}
+            </button></h3>
             <table>
               <tr>
                 <th style="width: 125px;">Decision</th>
-                <td>Accepted submission <small>2015-01-25</small></td>
+                <td>
+                  {% if role == 'author'%}
+                  Accepted submission <small>2015-01-25</small>
+                  {% endif %}
+                  {% if role == 'editor'%}
+                  <select class="form-control" id="decisionSelect">
+                    <option>Accept Submission</option>
+                    <option>Open review round</option>
+                    <option>Revisions required</option>
+                    <option>Decline submission</option>
+                  </select>
+                  <div class="alert alert-warning hidden" id="decisionAlert" role="alert">
+                    Please click "Save" to select reviewer. <font size="1">&lt;<a href="{{ app.url_generator.generate('editor_assign') }}">test page</a>&gt;</font>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      &nbsp; &nbsp;<span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  {% endif %}
+                </td>
               </tr>
               <tr>
                 <th style="width: 125px;">Editor Version</th>
@@ -207,6 +240,17 @@
             </table>
           </div>
           <div role="tabpanel" class="tab-pane" id="editing">
+            <h3>Editors</h3>
+            <div style="width: 200px;">
+              <hr />
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#">sirius</a><br>
+              <hr />
+            </div>
+            <button type="button" class="btn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              &nbsp;Add editor</button>&nbsp;
+            <button type="button" class="btn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              &nbsp;Add self</button>
             <h3>Copyediting</h3>
             <div class="tabbable tabs-left">
               <ul class="nav nav-tabs">
@@ -255,7 +299,7 @@
                         <td>--</td>
                       </tr>
                       <tr>
-                        <th>&nbsp</th>
+                        <th>&nbsp;</th>
                       </tr>
                       <tr>
                         <td colspan="2">
