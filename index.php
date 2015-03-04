@@ -193,7 +193,7 @@ $app->get('/reviewer/review', function () use ($app) {
         'role' => 'reviewer'
     ));
 })
-->bind('reviewer_reviewing');
+->bind('reviewer_review');
 
 
 /**

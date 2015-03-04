@@ -4,50 +4,241 @@
 {% block title %}Active reviewing{% endblock %}
 
 {% block content %}
-  <h1 class="page-header">Active reviewing</h1>
-   <ol class="breadcrumb">
-    <li><a href="{{ app.url_generator.generate('reviewer_dashboard') }}">Home</a></li>
-    <li class="active">Active reviewing</li>
+    <h1 class="page-header">Submission #{{ id }} <small> - Published</small></h1>
+  <ol class="breadcrumb">
+    <li><a href="{{ app.url_generator.generate('author_dashboard') }}">Home</a></li>
+    <li><a href="{{ app.url_generator.generate('author_submissions') }}">My submissions</a></li>
+    <li class="active">Submission #{{ id }}</li>
   </ol>
 
-  <!-- Table -->
-  <table class="table">
+  <div class="row">
 
-    <table class="table">
+    <div class="col-md-9">
+      <input type="text" class="form-control input-lg" value="Latex programming language tutorial" />
+      <br />
 
-    <thead>
-        <tr>
-            <th> Due date </th>
-            <th> Author </th>
-            <th> Title </th>
-            <th> Section </th>
-            <th> Submission date </th>
-        </tr>
-    </thead>
+      <div id="main-summary">
+        <table>
+          <tbody>
+              <tr>
+                <th style="width: 75px;">Author</th>
+                <td>
+                  Louis Racicot, Samuel Rondeau 
+                  <a href="mailto:#"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Section</th>
+                <td>Articles</td>
+              </tr>
+              <tr>
+                <th>Editor</th>
+                <td>
+                  Michel Desmarais
+                  <a href="mailto:#"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a>
+                </td>
+              </tr>
+          </tboy>
+        </table>
+      </div>
+      <br />
 
-    <tr>
-        <td> 2015-05-13 </td>
-        <td> <a>Rondeau, S</a> </td>
-        <td> <a href="{{ app.url_generator.generate('editor_submission_detail', {id: 1}) }}">The Physics of Stein;Gate</a> </td>
-        <td> Physics </td>
-        <td> 2014-02-25 </td>
-    </tr>
+      <div role="tabpanel">
 
-    <tr>
-        <td> 2015-12-22 </td>
-        <td> <a>Rondeau, S</a> </td>
-        <td> <a href="{{ app.url_generator.generate('editor_submission_detail', {id: 2}) }}">The Physics of Stein;Gate</a> </td>
-        <td> Physics </td>
-        <td> 2014-21-25 </td>
-    </tr>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#summary" aria-controls="summary" role="tab" data-toggle="tab">Summary</a></li>
+          <li role="presentation"><a href="#review" aria-controls="review" role="tab" data-toggle="tab">Review</a></li>
+          <li role="presentation"><a href="#editing" aria-controls="editing" role="tab" data-toggle="tab">Editing</a></li>
+          <li role="presentation"><a href="#metedata" aria-controls="metedata" role="tab" data-toggle="tab">Metadata</a></li>
+          <li role="presentation"><a href="#refbacks" aria-controls="refbacks" role="tab" data-toggle="tab">Refbacks</a></li>
+        </ul>
 
-    <tr>
-        <td> 2017-01-15 </td>
-        <td> <a>Rondeau, S</a> </td>
-        <td> <a href="{{ app.url_generator.generate('editor_submission_detail', {id: 3}) }}">The Physics of Stein;Gate</a> </td>
-        <td> Physics </td>
-        <td> 2014-02-05 </td>
-    </tr>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="summary">
+            <p>&nbsp;</p>
+            <table>
+              <tbody>
+                  <tr>
+                    <th style="width: 125px;">Original file</th>
+                    <td>
+                      <div class="well">
+                        <a href="#"><span class="glyphicon glyphicon-file"></span> 1-2-2.CFD.docx</a>&nbsp;&nbsp;&nbsp;<small>2015-01-04</small>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Suppl. files</th>
+                    <td>
+                      <a href="#">1-SP.docx</a>&nbsp;&nbsp;&nbsp;<small>2015-01-04</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>&nbsp;</th>
+                    <td>
+                      <a href="#">figure1.png</a>&nbsp;&nbsp;&nbsp;<small>2015-01-05</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>&nbsp;</th>
+                    <td>
+                      <a href="#">readme.txt</a>&nbsp;&nbsp;&nbsp;<small>2015-01-07</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>&nbsp;</th>
+                    <td>
+                      <button class="btn btn-xs"><span class="glyphicon glyphicon-plus"></span> Add file</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>&nbsp;</th>
+                  </tr>
+                  <tr>
+                    <th>Authors</th>
+                    <td>
+                      <div class="author-summary">
+                        <strong>Louis Racicot</strong> <a href="mailto:#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a><br />
+                        <em>École Polytechnique de Montréal</em><br />
+                        <a href="#">Visit profile</a>
+                      </div>
+                      <div class="author-summary">
+                        <strong>Samuel Rondeau</strong> <a href="mailto:#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a><br />
+                        <em>Université de Montréal</em><br />
+                        <a href="#">Visit profile</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>&nbsp;</th>
+                  </tr>
+                  <tr>
+                    <th>Language</th>
+                    <td>English</td>
+                  </tr>
+                  <tr>
+                    <th>&nbsp;</th>
+                  </tr>
+                  <tr>
+                    <th>Abstract</th>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet lacus ut justo iaculis condimentum id in nisl. In vitae metus elit. Donec vel congue augue. Suspendisse sit amet justo nec ipsum pellentesque rhoncus. Sed in venenatis nisl. Quisque sed efficitur ante. Praesent in fringilla elit. Aenean pellentesque imperdiet turpis, et aliquam lorem feugiat sit amet. Sed mi ligula, lacinia sit amet imperdiet et, finibus a elit. Ut imperdiet ligula quis gravida finibus. Vestibulum pellentesque porttitor convallis. Duis finibus lectus a nisi blandit, non ultricies erat congue.</td>
+                  </tr>
+                  <tr>
+                    <th>&nbsp;</th>
+                  </tr>
+                  <tr>
+                    <th>Supporting Agencies</th>
+                    <td>Agency 1<br /> Agency 2<br /> Agency 3</td>
+                  </tr>
+                  <tr>
+                    <th>&nbsp;</th>
+                  </tr>
+                  <tr>
+                    <th>References</th>
+                    <td>http://ref1.com<br />http://ref2.com</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="review">
+            <h3>Round 1<br /><small>Since 2015-01-01</small></h3>
+            <table>
+              <tr>
+                <th style="width: 125px;">Review Version</th>
+                <td><a href="#"><span class="glyphicon glyphicon-file"></span> 1-2-1.RV.PDF</a>&nbsp;&nbsp;&nbsp;<small>2015-01-04</small></td>
+              </tr>
+              <tr>
+                <th style="width: 125px;">Uploaded file</th>
+                <td><em>None</em></td>
+              </tr>
+            </table>
+            <hr>
 
-  </table>
+            <h3>Round 2<br /><small>Since 2015-01-18</small></h3>
+            <table>
+              <tr>
+                <th style="width: 125px;">Review Version</th>
+                <td><a href="#"><span class="glyphicon glyphicon-file"></span> 1-2-2.RV.PDF</a>&nbsp;&nbsp;&nbsp;<small>2015-01-20</small></td>
+              </tr>
+              <tr>
+                <th style="width: 125px;">Uploaded file</th>
+                <td><em>None</em></td>
+              </tr>
+            </table>
+            <hr>
+
+            <h3>Editor Decision <button class="btn"><span class="glyphicon glyphicon-envelope"></span> Notify Editor</button></h3>
+            <table>
+              <tr>
+                <th style="width: 125px;">Decision</th>
+                <td>Accepted submission <small>2015-01-25</small></td>
+              </tr>
+              <tr>
+                <th style="width: 125px;">Editor Version</th>
+                <td><a href="#"><span class="glyphicon glyphicon-file"></span> 1-2-2.RV.PDF</a>&nbsp;&nbsp;&nbsp;<small>2015-01-20</small></td>
+              </tr>
+              <tr>
+                <th style="width: 125px;">Author Version</th>
+                <td><em>None</em></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <th style="width: 125px;">Upload Author Version</th>
+                <td><input type="file" /></td>
+              </tr>
+            </table>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="editing">
+
+          </div>
+          <div role="tabpanel" class="tab-pane" id="metedata">
+
+          </div>
+          <div role="tabpanel" class="tab-pane" id="refbacks">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Date added</th>
+                  <th>Hits</th>
+                  <th>URL</th>
+                  <th>Title</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="6" style="text-align:center"><em>There are currently no refbacks.</em></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <form>
+        <div class="form-group">
+          <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+        </div>
+        <div class="form-group">
+          <label >Status</label><br />
+          <em>Published</em><br />since 2015-03-01
+        </div>
+        <div class="form-group">
+          <label>Last modified</label><br />
+          2015-02-28
+        </div>
+        <div class="form-group">
+          <label>Date submitted</label><br />
+          2015-02-20
+        </div>
+        
+    </div>
+  </div>
 {% endblock %}
