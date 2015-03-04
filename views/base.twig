@@ -217,7 +217,8 @@
                 <li{% if 'reviewer_inbox' == active_page %} class="active"{% endif %}>
                   <a href="{{ app.url_generator.generate('reviewer_inbox') }}">Inbox</a>
                 </li>
-                <li{% if 'reviewer_reviewing' == active_page %} class="active"{% endif %}>
+                <li{% if 'reviewer_reviewing' == active_page
+                      or 'reviewer_review' == active_page %} class="active"{% endif %}>
                   <a href="{{ app.url_generator.generate('reviewer_reviewing') }}">Active reviewing</a>
                 </li>
                 <li{% if 'reviewer_archives' == active_page %} class="active"{% endif %}>
