@@ -179,6 +179,14 @@ $app->get('/reviewer/reviewing', function () use ($app) {
 })
 ->bind('reviewer_reviewing');
 
+// Reviewer archives
+$app->get('/reviewer/archives', function () use ($app) {
+    return $app['twig']->render('reviewer/archives.twig', array(
+        'role' => 'reviewer'
+    ));
+})
+->bind('reviewer_archives');
+
 
 /**
  * Run the application
