@@ -4,5 +4,62 @@
 {% block title %}Inbox{% endblock %}
 
 {% block content %}
-  <h1 class="page-header">Notifications</h1>
+  <h1 class="page-header">Inbox</h1>
+   <ol class="breadcrumb">
+    <li><a href="{{ app.url_generator.generate('reviewer_dashboard') }}">Home</a></li>
+    <li class="active">Inbox</li>
+  </ol>
+
+  <!-- Table -->
+  <table class="table">
+
+    <thead>
+        <tr>
+            <th> Due date </th>
+            <th> Author </th>
+            <th> Title </th>
+            <th> Section </th>
+            <th> Submission date </th>
+            <th> Action </th>
+        </tr>
+    </thead>
+
+    <tr>
+    	<td> 2015-03-26 </td>
+        <td> <a href="https://www.facebook.com/samuelrz">Rondeau, S</a> </td>
+        <td> <a href="{{ app.url_generator.generate('editor_submission_detail', {id: 1}) }}">The Physics of Stein;Gate</a> </td>
+        <td> SCI </td>
+        <td> 2015-02-06 </td>
+        <td> <a class="btn btn-success" href="{{ app.url_generator.generate('editor_inreview') }}" role="button">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Accept</a>
+        <a class="btn btn-danger" href="{{ app.url_generator.generate('editor_inreview') }}" role="button">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Decline</a> </td>
+    </tr>
+
+    <tr>
+    	<td> 2015-03-26 </td>
+        <td> <a href="https://www.facebook.com/samuelrz">Rondeau, S</a> </td>
+        <td> <a href="{{ app.url_generator.generate('editor_submission_detail', {id: 1}) }}">The Physics of Stein;Gate</a> </td>
+        <td> SCI </td>
+        <td> 2015-02-06 </td>
+        <td> <a class="btn btn-success" href="{{ app.url_generator.generate('editor_inreview') }}" role="button">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Accept</a>
+        <a class="btn btn-danger" href="{{ app.url_generator.generate('editor_inreview') }}" role="button">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Decline</a> </td>
+    </tr>
+
+    <tr>
+    	<td> 2015-03-26 </td>
+        <td> <a href="https://www.facebook.com/samuelrz">Rondeau, S</a> </td>
+        <td> <a href="{{ app.url_generator.generate('editor_submission_detail', {id: 1}) }}">The Physics of Stein;Gate</a> </td>
+        <td> SCI </td>
+        <td> 2015-02-06 </td>
+        <td> <a class="btn btn-success" href="{{ app.url_generator.generate('editor_inreview') }}" role="button">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Accept</a>
+        <a class="btn btn-danger" href="{{ app.url_generator.generate('editor_inreview') }}" role="button">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Decline</a> </td>
+    </tr>
+
+  </table>
+
 {% endblock %}
