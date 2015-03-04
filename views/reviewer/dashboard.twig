@@ -4,5 +4,47 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
-  <h1 class="page-header">Dashboard</h1>
+<h1 class="page-header">Dashboard</h1>
+
+  <h2>Active submissions </h2>
+  <div class="panel panel-default">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Journal</th>
+          <th>Section</th>
+          <th>Assigned date</th>
+          <th>Due date</th>
+          <th>Review round</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="{{ app.url_generator.generate('author_submission_detail', {id: 1}) }}"> Latex programming language tutorial</a></td>
+          <td>Journal title</td>
+          <td>Programmation</td>
+          <td>2015-01-04</td>
+          <td>2015-01-08<br /></td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td><a href="{{ app.url_generator.generate('author_submission_detail', {id: 2}) }}"> You spin my head right round</a></td>
+          <td>Journal title</td>
+          <td>Music</td>
+          <td>2015-02-02<br /></td>
+          <td>2015-06-12<br /></td>
+          <td>1</a></td>
+        </tr>
+        <tr>
+          <td><a href="{{ app.url_generator.generate('author_submission_detail', {id: 3}) }}"> The purpose of human rights</a></td>
+          <td>Journal title</td>
+          <td>Philosophy</td>
+          <td>2015-01-15<br /></td>
+          <td>2016-01-04<br /></td>
+          <td>2</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>      
 {% endblock %}
