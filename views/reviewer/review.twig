@@ -1,11 +1,16 @@
 {% extends "base.twig" %}
 {% set active_page = "reviewer_review" %}
 
-{% block title %}Review{% endblock %}
+{% block title %}Review submission{% endblock %}
 
 {% block content %}
 
-<h1 class="page-header">Review of a submission</h1>
+<h1 class="page-header">Review submission</h1>
+   <ol class="breadcrumb">
+    <li><a href="{{ app.url_generator.generate('reviewer_dashboard') }}">Home</a></li>
+    <li><a href="{{ app.url_generator.generate('reviewer_reviewing') }}">Active reviewing</a></li>
+    <li class="active">Review submission</li>
+  </ol>
 
 <h2>Submission informations</h2>
 <div class="row">
